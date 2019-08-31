@@ -1,0 +1,124 @@
+/*
+ ============================================================================
+ Name        : Tp_1_BarbutoJonatan.c
+ Author      : Jonatan Barbuto
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Calculator in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	int numeroA;
+	int numeroB;
+	//Pido los numeros
+	printf("Ingrese numero A:\n");
+	scanf("%d",&numeroA);
+	printf("Ingrese numero B:\n");
+	scanf("%d",&numeroB);
+
+
+	//Devuelvo los resultados
+
+
+
+	return 0;
+}
+
+int suma(int numeroA, int numeroB)
+{
+	int pSuma;
+	pSuma = numeroA+numeroB;
+	return 0;
+}
+
+int resta(int numeroA,int numeroB)
+{
+	int pResta;
+	pResta = numeroA-numeroB;
+	return 0;
+}
+
+int multiplicacion(int numeroA,int numeroB)
+{
+
+}
+
+int division(int numeroA,int numeroB)
+{
+	int pDivision;
+	if(numeroB==0)
+	{
+		printf("No es posible dividir por cero");
+	}
+	else
+	pDivision = numeroA/numeroB;
+	return 0;
+
+}
+
+int factorial(int numeroA, int numeroB)
+{
+	int i;
+	int pFactorialA;
+	int pFactorialB;
+	int aFact=1;
+	int bFact=1;
+
+	//Factorial del numero A
+	if(pFactorialA<0)
+	{
+		prinf("El factorial del numero A es 0\n");
+	}
+	else if(pFactorialA==0)
+	{
+		prinf("El factorial del numero B es 1\n");
+	}
+	else
+		for(i=1;i=pFactorialA;i++)
+		{
+			aFact=aFact*i;
+		}
+
+	//Factorial del numero B
+	if(pFactorialB<0)
+	{
+		prinf("El factorial del numero B es 0\n");
+	}
+	else if(pFactorialB==0)
+	{
+		prinf("El factorial del numero B es 1\n");
+	}
+	else
+		for(i=1;i=pFactorialB;i++)
+		{
+			bFact=bFact*i;
+		}
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

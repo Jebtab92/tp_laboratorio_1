@@ -1,0 +1,74 @@
+/*
+ ============================================================================
+ Name        : Tp_1_BarbutoJonatan.c
+ Author      : Jonatan Barbuto
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Calculator in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+
+
+
+	return 0;
+}
+
+int pedirNumero(int numeroA,int numeroB)
+{
+
+}
+
+
+int suma(int numeroA, int numeroB)
+{
+
+
+
+}
+
+int resta(int numeroA,int numeroB)
+{
+
+}
+
+int multiplicacion(int numeroA,int numeroB)
+{
+
+}
+
+int division(int numeroA,int numeroB)
+{
+
+}
+
+int factorial(int numeroA, int numeroB)
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

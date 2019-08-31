@@ -1,0 +1,48 @@
+11:45:18 **** Incremental Build of configuration Debug for project Tp_1_BarbutoJonatan ****
+make all 
+Building file: ../src/Tp_1_BarbutoJonatan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Tp_1_BarbutoJonatan.d" -MT"src/Tp_1_BarbutoJonatan.o" -o "src/Tp_1_BarbutoJonatan.o" "../src/Tp_1_BarbutoJonatan.c"
+../src/Tp_1_BarbutoJonatan.c: In function ‘main’:
+../src/Tp_1_BarbutoJonatan.c:19:15: error: expected expression before ‘int’
+  PedirNumeros(int numeroA,int numeroB);
+               ^~~
+../src/Tp_1_BarbutoJonatan.c:19:2: error: too few arguments to function ‘PedirNumeros’
+  PedirNumeros(int numeroA,int numeroB);
+  ^~~~~~~~~~~~
+../src/Tp_1_BarbutoJonatan.c:15:5: note: declared here
+ int PedirNumeros(int numeroA,int numeroB);
+     ^~~~~~~~~~~~
+../src/Tp_1_BarbutoJonatan.c: In function ‘sumar’:
+../src/Tp_1_BarbutoJonatan.c:36:6: warning: variable ‘pSuma’ set but not used [-Wunused-but-set-variable]
+  int pSuma;
+      ^~~~~
+../src/Tp_1_BarbutoJonatan.c: In function ‘restar’:
+../src/Tp_1_BarbutoJonatan.c:44:6: warning: variable ‘pResta’ set but not used [-Wunused-but-set-variable]
+  int pResta;
+      ^~~~~~
+../src/Tp_1_BarbutoJonatan.c: In function ‘multiplicar’:
+../src/Tp_1_BarbutoJonatan.c:51:6: warning: variable ‘pMultiplicacion’ set but not used [-Wunused-but-set-variable]
+  int pMultiplicacion;
+      ^~~~~~~~~~~~~~~
+../src/Tp_1_BarbutoJonatan.c: In function ‘dividir’:
+../src/Tp_1_BarbutoJonatan.c:58:6: warning: variable ‘pDivision’ set but not used [-Wunused-but-set-variable]
+  int pDivision;
+      ^~~~~~~~~
+src/subdir.mk:21: fallo en las instrucciones para el objetivo 'src/Tp_1_BarbutoJonatan.o'
+../src/Tp_1_BarbutoJonatan.c: In function ‘factorizar’:
+../src/Tp_1_BarbutoJonatan.c:87:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   for(i=1;i=pFactorialA;i++)
+   ^~~
+../src/Tp_1_BarbutoJonatan.c:102:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   for(i=1;i=pFactorialB;i++)
+   ^~~
+../src/Tp_1_BarbutoJonatan.c: In function ‘MostrarResultados’:
+../src/Tp_1_BarbutoJonatan.c:114:6: warning: unused variable ‘rDivision’ [-Wunused-variable]
+  int rDivision;
+      ^~~~~~~~~
+make: *** [src/Tp_1_BarbutoJonatan.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+11:45:18 Build Failed. 4 errors, 7 warnings. (took 302ms)
+
