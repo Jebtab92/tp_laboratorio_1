@@ -1,0 +1,97 @@
+/*
+ ============================================================================
+ Name        : Tp_1_BarbutoJonatan.c
+ Author      : Jonatan Barbuto
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Calculator in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "BibliotecaTp1.h"
+
+
+int main(void)
+{
+	int mostrarMenu(int eleccionMenu,float numeroA,float numeroB);
+
+	return 0;
+}
+
+
+
+int mostrarMenu(int eleccionMenu,float numeroA,float numeroB)
+{
+	int flagA=0;
+	int flagB=0;
+
+	printf("1. Ingresar 1er operando (A=x)\n"
+	"2. Ingresar 2do operando (B=y)\n"
+	"3. Calcular todas las operaciones\n"
+	"a) Calcular la suma (A+B)\n"
+	"b) Calcular la resta (A-B)\n"
+	"c) Calcular la division (A/B)\n"
+	"d) Calcular la multiplicacion (A*B)\n"
+	"e) Calcular el factorial (A!)\n"
+	"4. Informar resultados\n"
+	"a) “El resultado de A+B es: r\n"
+	"b) “El resultado de A-B es: r\n"
+	"c) “El resultado de A/B es: r o “No es posible dividir por cero”\n"
+	"d) “El resultado de A*B es: r\n"
+	"e) “El factorial de A es: r1 y El factorial de B es: r2\n"
+	"5. Salir");
+
+	scanf("%d",&eleccionMenu);
+
+	switch(eleccionMenu)
+	{
+	case 1:
+		printf("Ingrese valor de A");
+		scanf("%f",&numeroA);
+		flagA=1;
+		break;
+	case 2:
+		printf("Ingrese valor de B");
+		scanf("%f",&numeroB);
+		flagB=1;
+		break;
+	case 3:
+		if(flagA==1 && flagB==1)
+		{
+			//llamar a las funciones para hacer todos los calculos
+		}
+		else
+		{
+			printf("Falta ingresar un valor");
+		}
+		break;
+	case 4:
+
+		//Llamar a la funcion para que muestre los valores
+		break;
+	case 5:
+		exit(0);
+		break;
+	}
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
