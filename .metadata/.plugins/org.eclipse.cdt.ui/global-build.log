@@ -1,47 +1,5 @@
-22:13:09 **** Incremental Build of configuration Debug for project Tp_1_BarbutoJonatan ****
-make all 
-Building file: ../src/BibliotecaTp1.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BibliotecaTp1.d" -MT"src/BibliotecaTp1.o" -o "src/BibliotecaTp1.o" "../src/BibliotecaTp1.c"
-../src/BibliotecaTp1.c: In function ‘factorizar’:
-../src/BibliotecaTp1.c:59:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-   for(i=1;i=pFactorialA;i++)
-   ^~~
-../src/BibliotecaTp1.c:74:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-   for(i=1;i=pFactorialB;i++)
-   ^~~
-../src/BibliotecaTp1.c: In function ‘mostrarMenu’:
-../src/BibliotecaTp1.c:147:4: warning: too many arguments for format [-Wformat-extra-args]
-    "1. Ingresar 1er operando (A=%f)\n",numeroA,
-    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../src/BibliotecaTp1.c:168:10: warning: too many arguments for format [-Wformat-extra-args]
-   printf("“El resultado de A*B es: %f\n“",resultMultiplicacion,
-          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../src/BibliotecaTp1.c: In function ‘factorizar’:
-../src/BibliotecaTp1.c:50:4: warning: ‘pFactorialA’ is used uninitialized in this function [-Wuninitialized]
-  if(pFactorialA<0)
-    ^
-../src/BibliotecaTp1.c:65:4: warning: ‘pFactorialB’ is used uninitialized in this function [-Wuninitialized]
-  if(pFactorialB<0)
-    ^
-../src/BibliotecaTp1.c: In function ‘mostrarMenu’:
-../src/BibliotecaTp1.c:168:3: warning: ‘resultFactorialA’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   printf("“El resultado de A*B es: %f\n“",resultMultiplicacion,
-   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    "e) “El factorial de A es: %d y El factorial de B es: %d\n“"
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     ,resultFactorialA,resultFactorialB,
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    "5. Salir\n");
-    ~~~~~~~~~~~~~
-../src/BibliotecaTp1.c:168:3: warning: ‘resultFactorialB’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-Finished building: ../src/BibliotecaTp1.c
- 
-Building target: Tp_1_BarbutoJonatan
-Invoking: GCC C Linker
-gcc  -o "Tp_1_BarbutoJonatan"  ./src/BibliotecaTp1.o ./src/Tp_1_BarbutoJonatan.o   
-Finished building target: Tp_1_BarbutoJonatan
- 
-22:13:17 **** Incremental Build of configuration Debug for project Tp_1_BarbutoJonatan ****
-make all 
-make: No se hace nada para 'all'.
+20:33:12 **** Incremental Build of configuration Debug for project Tp_1_BarbutoJonatan ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\BibliotecaTp1.o" "..\\src\\BibliotecaTp1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp_1_BarbutoJonatan.o" "..\\src\\Tp_1_BarbutoJonatan.c" 
+gcc -o Tp_1_BarbutoJonatan "src\\BibliotecaTp1.o" "src\\Tp_1_BarbutoJonatan.o" 

@@ -15,16 +15,16 @@
 
 int main(void)
 {
-	int menu;
-	int numeroA;
-	int numeroB;
+	int eleccionMenu;
+	float numeroA;
+	float numeroB;
 
-
-	mostrarMenu(&menu,&numeroA,&numeroB);
+	mostrarMenu(eleccionMenu, numeroA, numeroB);
 
 
 	return 0;
 }
+
 
 
 
