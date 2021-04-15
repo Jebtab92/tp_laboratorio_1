@@ -15,12 +15,13 @@
 
 int main(void)
 {
+	setbuf(stdout, NULL);
 	int menu;
 	int numeroA;
 	int numeroB;
 
 
-	mostrarMenu(&menu,&numeroA,&numeroB);
+	mostrarMenu(&menu, &numeroA, &numeroB);
 
 
 	return 0;
