@@ -1,4 +1,5 @@
-15:34:34 **** Incremental Build of configuration Debug for project Tp_2_BarbutoJonatan ****
+23:49:36 **** Incremental Build of configuration Debug for project Tp_2_BarbutoJonatan ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayEmployees.o" "..\\src\\ArrayEmployees.c" 
-gcc -o Tp_2_BarbutoJonatan.exe "src\\ArrayEmployees.o" "src\\Tp_2_BarbutoJonatan.o" 
+gcc -o Tp_2_BarbutoJonatan.exe "src\\ArrayEmployees.o" "src\\BibliotecaTp2.o" "src\\Tp_2_BarbutoJonatan.o" 
+Info: Nothing to build for Tp_2_BarbutoJonatan
