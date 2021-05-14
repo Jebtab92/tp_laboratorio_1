@@ -1,7 +1,7 @@
 /*
  * ArrayEmployees.c
  *
- *  Created on: May 2, 2021
+ *  Created on: May 14, 2021
  *      Author: Jonatan Barbuto
  */
 
@@ -12,28 +12,8 @@
 #include "ArrayEmployees.h"
 #include "BibliotecaTp2.h"
 
-#define VACIO 0
-#define OCUPADO 1
-
-
-void harcodeoDatos(Employee list[],int size,int* lastID)
-{
-	*lastID=5;
-	int id[5]={1,2,3,4,5};
-	char name[][51]={"Juan","Sasha","Facundo","German","Octavio"};
-	char lastName[][51]={"Chico","Lospalluto","Chico","Scarafilo","Villegas"};
-	float salary[5]={34000.00,35000.00,34000.00,45000.00,65000.00};
-	int sector[5]={1,1,1,3,3};
-	int isEmpty[5]={1,1,1,1,1};
-	for (int i = 0; i < 5; ++i){
-		list[i].id=id[i];
-		strcpy(list[i].name,name[i]);
-		strcpy(list[i].lastName,lastName[i]);
-		list[i].salary=salary[i];
-		list[i].sector=sector[i];
-		list[i].isEmpty=isEmpty[i];
-	}
-}
+#define LIBRE 1
+#define OCUPADO 0
 
 /**
  * \brief To indicate that all position in the array are empty,
@@ -44,13 +24,17 @@ void harcodeoDatos(Employee list[],int size,int* lastID)
  */
 int initEmployees(Employee list[], int size)
 {
-	int reply=0;
-	if(size>0){
-		for (int i = 0; i < size; ++i){
-			list[i].isEmpty=0;
+	int reply = 0;
+	if(size>0)
+	{
+		for(int i = 0; i < size; ++i)
+		{
+			list[i].isEmpty = LIBRE;
 		}
-	}else{
-		reply=-1;
+	}
+	else
+	{
+		reply = -1;
 	}
 	return reply;
 }
@@ -65,20 +49,20 @@ int initEmployees(Employee list[], int size)
  * \param lastName[] char
  * \param salary float
  * \param sector int
- * \return int Return (-1) if Error [Invalid length or NULL pointer or without
-free space] - (0) if Ok
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without free space] - (0) if Ok
  */
 int addEmployee(Employee list[], int size, int id, char name[], char lastName[], float salary, int sector)
 {
 	int place =	searchSlot(list, size);
 
-	if(place>=0){
-		list[place].id=id;
-		strcpy(list[place].name,name);
-		strcpy(list[place].lastName,lastName);
-		list[place].salary=salary;
-		list[place].sector=sector;
-		list[place].isEmpty=OCUPADO;
+	if(place>=0)
+	{
+		list[place].id = id;
+		strcpy(list[place].name, name);
+		strcpy(list[place].lastName, lastName);
+		list[place].salary = salary;
+		list[place].sector = sector;
+		list[place].isEmpty = OCUPADO;
 	}
 	return 0;
 }
@@ -87,25 +71,24 @@ int addEmployee(Employee list[], int size, int id, char name[], char lastName[],
  * \brief recibe la lista de Employees y busca un lugar disponible.
  *  \param recibe la lista
  *  \param recibe el tamanio
- *  \return En caso de encontrar lugar retorna el indice de la lista que se encuentra disponible
- *  		 0 en caso de No encontrar lugar
- *  		 y -1 en caso de error en algun parametro.
+ *  \return Indice o -1 si no hay lugar
  */
 int searchSlot(Employee list[], int size)
 {
-	int reply=-2;
+	int reply = -2;
 
-	if(size>0){
-		for (int i = 0; i < size; ++i)
+	if(size>0)
+	{
+		for(int i = 0; i < size; ++i)
 		{
-			if(list[i].isEmpty==VACIO)
+			if(list[i].isEmpty == LIBRE)
 			{
-				reply=i;
+				reply = i;
 				break;
 			}
 			else
 			{
-				reply=-1;
+				reply = -1;
 			}
 		}
 	}
@@ -120,15 +103,15 @@ int searchSlot(Employee list[], int size)
  */
 int searchId(Employee list[], int size)
 {
-	int reply=-1;
+	int reply = -1;
 
-	for (int i = 0; i < size; ++i)
+	for(int i = 0; i < size; ++i)
 	{
-		if(list[i].isEmpty==OCUPADO)
+		if(list[i].isEmpty == OCUPADO)
 		{
 			if(list[i].id > reply)
 			{
-				reply=list[i].id;
+				reply = list[i].id;
 			}
 		}
 	}
@@ -143,11 +126,11 @@ int searchId(Employee list[], int size)
  */
 int arrayEmpty(Employee* list,int size)
 {
-	int reply=0;
+	int reply = 0;
 
-	for (int i = 0; i < size; ++i)
+	for(int i = 0; i < size; ++i)
 	{
-		if(list[i].isEmpty == 1)
+		if(list[i].isEmpty == OCUPADO)
 		{
 			reply++;
 		}
@@ -170,7 +153,7 @@ int getEmployee(Employee list[], int size, int* lastID)
 	int reply = 0;
 	int id;
 
-	if(searchSlot(list, size)<=-1)
+	if(searchSlot(list, size) <= -1)
 	{
 		printf("No hay lugares Disponibles para nuevos empleados.\n");
 		reply = -1;
@@ -206,10 +189,12 @@ int printEmployees(Employee list[], int size)
 	printf("*******************************************************************************\n");
 	printf("|%10s  %20s  %20s  %10s %10s| \n","ID","NOMBRE","APELLIDO","SUELDO","SECTOR");
 	printf("*******************************************************************************\n");
-	if(size>0){
+
+	if(size>0)
+	{
 		for (int i = 0; i < size; ++i)
 		{
-			if(list[i].isEmpty==1)
+			if(list[i].isEmpty == OCUPADO)
 			{
 				printf("|%10d|  %20s|  %20s|  %10.2f| %6d| \n",list[i].id,list[i].name,list[i].lastName,list[i].salary,list[i].sector);
 			}
@@ -234,7 +219,7 @@ int ModifyEmployee(Employee list[],int size)
 	int reply = 0;
 	int id = utn_GetNumber("Ingrese El ID del empleado: ","Error id fuera de rango", 1, size+1);
 	int aux = findEmployeeById(list, size, id);
-	if(aux>=0)
+	if(aux >= 0)
 	{
 		printf("Se modificara el empleado: \n");
 		printf("*******************************************************************************\n");
@@ -242,7 +227,8 @@ int ModifyEmployee(Employee list[],int size)
 		printf("*******************************************************************************\n");
 		printf("|%10d|  %20s|  %20s|  %10.2f| %6d| \n",list[aux].id,list[aux].name,list[aux].lastName,list[aux].salary,list[aux].sector);
 		printf("*******************************************************************************\n");
-		for (int i = 0; i <size; ++i)
+
+		for(int i = 0; i <size; ++i)
 		{
 			if(list[i].id == id)
 			{
@@ -251,34 +237,39 @@ int ModifyEmployee(Employee list[],int size)
 									  "-2- Apellido\n"
 									  "-3- Salario\n"
 									  "-4- Sector\n"
+									  "-5- Salir\n"
 									  "Ingrese Opcion: -->","\nError, Reintente: -->",1,4))
 				{
 					case 1:
 					{
 						utn_GetName(name, "Ingrese Nombre: ", "Error, sin numeros", 51);
-						strcpy(list[i].name,name);
+						strcpy(list[i].name, name);
 						break;
 					}
 					case 2:
 					{
 						utn_GetName(lastName, "Ingrese Apellido: ", "Error, sin numeros", 51);
-						strcpy(list[i].lastName,lastName);
+						strcpy(list[i].lastName, lastName);
 						break;
 					}
 					case 3:
 					{
-						salary=utn_GetNumberFloat("Ingrese Salario: ","Error, No valido: ",1,999999);
-						list[i].salary=salary;
+						salary = utn_GetNumberFloat("Ingrese Salario: ","Error, No valido: ",1,999999);
+						list[i].salary = salary;
 						break;
 					}
 					case 4:
 					{
-						sector=utn_GetNumber("Ingrese Sector: ","Sector no valido: ",1,10);
-						list[i].sector=sector;
+						sector = utn_GetNumber("Ingrese Sector: ","Sector no valido: ",1,10);
+						list[i].sector = sector;
+						break;
+					}
+					case 5:
+					{
 						break;
 					}
 				}
-				reply=1;
+				reply = 1;
 			}
 		}
 	}
@@ -300,10 +291,9 @@ int findEmployeeById(Employee list[], int size, int id)
 	{
 		for (int i = 0; i < size; ++i)
 		{
-			if(list[i].id==id && list[i].isEmpty==1)
+			if(list[i].id == id && list[i].isEmpty == OCUPADO)
 			{
-				//reply=id;
-				reply=i;
+				reply = i;
 			}
 		}
 	}
@@ -317,7 +307,8 @@ int findEmployeeById(Employee list[], int size, int id)
  * \param id int
  * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't find a employee] - (0) if Ok
  */
-int removeEmployee(Employee list[], int size, int id){
+int removeEmployee(Employee list[], int size, int id)
+{
 	int reply = -1;
 	int position = findEmployeeById(list, size, id);
 
@@ -325,8 +316,8 @@ int removeEmployee(Employee list[], int size, int id){
 	{
 		if(list[position].isEmpty == OCUPADO)
 		{
-			list[position].isEmpty=VACIO;
-			reply=0;
+			list[position].isEmpty = LIBRE;
+			reply = 0;
 		}
 	}
 	return reply;
@@ -358,18 +349,18 @@ int sortEmployees(Employee list[], int size, int order)
 					if(strcmp(list[i].lastName,list[i+1].lastName)>0)
 					{
 						flagSwap=1;
-						aux=list[i];
-						list[i]=list[i+1];
+						aux = list[i];
+						list[i] = list[i+1];
 						list[i+1]=aux;
 					}
 					else
 					{
 						if(strcmp(list[i].lastName,list[i+1].lastName)==0 && list[i].sector > list[i+1].sector)
 						{
-							flagSwap=1;
-							aux=list[i];
-							list[i]=list[i+1];
-							list[i+1]=aux;
+							flagSwap = 1;
+							aux = list[i];
+							list[i] = list[i+1];
+							list[i+1] = aux;
 						}
 					}
 				}
@@ -378,18 +369,18 @@ int sortEmployees(Employee list[], int size, int order)
 					if(strcmp(list[i+1].lastName,list[i].lastName)>0)
 					{
 						flagSwap=1;
-						aux=list[i];
-						list[i]=list[i+1];
-						list[i+1]=aux;
+						aux = list[i];
+						list[i] = list[i+1];
+						list[i+1] = aux;
 					}
 					else
 					{
 						if(strcmp(list[i].lastName,list[i+1].lastName)==0 && list[i+1].sector > list[i].sector)
 						{
-							flagSwap=1;
-							aux=list[i];
-							list[i]=list[i+1];
-							list[i+1]=aux;
+							flagSwap = 1;
+							aux = list[i];
+							list[i] = list[i+1];
+							list[i+1] = aux;
 						}
 					}
 				}
@@ -419,11 +410,11 @@ float averageSalary(Employee list[], int size, float* total, int* cantEmp)
 
 	if(list != NULL && size >= 0)
 	{
-		for(int i = 0; i < size; ++i)
+		for(int i = 0; i < size; i++)
 		{
-			if(list[i].isEmpty == 1)
+			if(list[i].isEmpty == OCUPADO)
 			{
-				accum+=list[i].salary;
+				accum += list[i].salary;
 				conter++;
 			}
 		}
@@ -432,7 +423,7 @@ float averageSalary(Employee list[], int size, float* total, int* cantEmp)
 
 		for(int i = 0; i < size; ++i)
 		{
-			if(list[i].salary > reply && list[i].isEmpty == 1)
+			if(list[i].salary > reply && list[i].isEmpty == OCUPADO)
 			{
 				cantidadEmpleados++;
 			}
@@ -455,7 +446,7 @@ void printAverageInfo(float* promedio, float* total, int* cantEncimaDelPromedio)
 	printf("**************************************************************************************\n");
 	printf("|%1s      | %-25s  | %20s | \n"," PROMEDIO "," TOTAL "," EMPLEADOS POR ARRIBA DEL PROMEDIO  ");
 	printf("**************************************************************************************\n");
-	printf("| %-15.2f|  %-26.2f|  %21d               |\n",*promedio,*total,*cantEncimaDelPromedio);
+	printf("| %-15.2f|  %-26.2f|  %21d               |\n",*promedio, *total, *cantEncimaDelPromedio);
 	printf("**************************************************************************************\n");
 	system("pause");
 }

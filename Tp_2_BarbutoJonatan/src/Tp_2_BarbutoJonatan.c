@@ -14,7 +14,7 @@
 #include <ctype.h>
 #include "ArrayEmployees.h"
 #include "BibliotecaTp2.h"
-#define QUANTITY 10
+#define QUANTITY 1000
 
 int main(void)
 {
@@ -26,8 +26,6 @@ int main(void)
 	int arribadelPromedio;
 	Employee Empleados[QUANTITY];
 	initEmployees(Empleados, QUANTITY);
-	//HardCoding de valores
-	harcodeoDatos(Empleados, lastId, &lastId);
 
 	do
 	{
@@ -56,7 +54,7 @@ int main(void)
 					}
 					else
 					{
-						printf("Algo salio mal Reintente.");
+						printf("Algo salio mal Reintente.\n");
 					}
 					system("pause");
 				}
@@ -102,21 +100,20 @@ int main(void)
 									"--Opcion: ", "Error, Opcion no valida.", 1, 3))
 					{
 						case 1:
-						{// Listado de los empleados ordenados alfabeticamente por Apellido y Sector
+						{
 							sortEmployees(Empleados, QUANTITY, 0);
 							printEmployees(Empleados, QUANTITY);
 							system("pause");
 							break;
 						}
 						case 2:
-						{//Total y promedio de los salarios, y cuantos empleados superan el salario promedio.
+						{
 							promedioSueldos = averageSalary(Empleados, QUANTITY, &totalSueldos, &arribadelPromedio);
 							printAverageInfo(&promedioSueldos, &totalSueldos, &arribadelPromedio);
 							break;
 						}
 						case 3:
 						{
-							//Se ejecuta el Break en este case para volver al menu anterior!
 							break;
 						}
 					}
