@@ -5,7 +5,7 @@
 typedef struct
 {
     int id;
-    char nombre[100];
+    char nombre[128];
     int horasTrabajadas;
     int sueldo;
 }Employee;
