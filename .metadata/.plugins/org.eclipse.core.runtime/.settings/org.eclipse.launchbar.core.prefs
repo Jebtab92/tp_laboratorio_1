@@ -1,10 +1,11 @@
 LaunchTargetManager/configs/Tp_1_BarbutoJonatan.exe=org.eclipse.launchbar.core.launchTargetType.local\:Local
 LaunchTargetManager/configs/Tp_2_BarbutoJonatan.exe=org.eclipse.launchbar.core.launchTargetType.local\:Local
 LaunchTargetManager/configs/Tp_3_BarbutoJonatan.exe=org.eclipse.launchbar.core.launchTargetType.local\:Local
+LaunchTargetManager/configs/Tp_4_BarbutoJonatan_Etapa_2.exe=org.eclipse.launchbar.core.launchTargetType.local\:Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Tp_1_BarbutoJonatan,org.eclipse.launchbar.core.descriptorType.default\:Tp_2_BarbutoJonatan.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp_1_BarbutoJonatan.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp_4_BarbutoJonatan.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp_3_BarbutoJonatan.exe
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Tp_1_BarbutoJonatan.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp_1_BarbutoJonatan,org.eclipse.launchbar.core.descriptorType.default\:Tp_2_BarbutoJonatan.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp_3_BarbutoJonatan.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp_4_BarbutoJonatan.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp_4_BarbutoJonatan_Etapa_2.exe
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:Tp_1_BarbutoJonatan.exe/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Tp_1_BarbutoJonatan.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
